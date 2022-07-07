@@ -1,0 +1,24 @@
+<header class="flex">
+  <img alt="Valant logo" width="150" src="../assets/valant_logo.png" />
+  <h1>Welcome to {{ title }}</h1>
+</header>
+<main>
+  
+</main>
+<h1> File Uploader</h1>
+<input #file type="file" multiple (change)="upload(file.files)" />
+<br />
+<span style="font-weight:bold; color:green;" *ngIf="progress > 0 && progress < 100">
+  {{progress}}%
+</span>
+<span style="font-weight: bold; color:green;" *ngIf="message" >
+  {{message}}
+</span>
+
+<div class="maze-grid">
+  <div class="maze-row" *ngFor="let mazes of mazeContent">
+    <div class="maze-row-details" >
+      <span> {{mazes}}</span>
+    </div>
+  </div>
+</div>
